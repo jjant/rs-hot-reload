@@ -7,11 +7,11 @@ pub struct State {
 
 impl Game for State {
     fn init() -> Self {
-        Self { value: 42 }
+        Self { value: -2 }
     }
 
     fn update(&mut self) {
-        self.value += 8;
+        self.value += 1;
     }
 
     fn draw(&self) {
@@ -20,9 +20,9 @@ impl Game for State {
 }
 
 #[no_mangle]
-pub fn init_game() {
-    println!("wtf");
-    <State as Game>::init();
+pub fn init_game() -> State {
+    println!("Initing game");
+    <State as Game>::init()
 }
 
 #[no_mangle]
